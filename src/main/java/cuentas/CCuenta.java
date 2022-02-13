@@ -1,74 +1,87 @@
 package cuentas;
 
+/**
+ * Clase que gestiona los datos de una cuenta bancaria
+ * @author Juan Manuel Ruiz Bolívar
+ * @version 1.0
+ */
 
 public class CCuenta {
 
     /**
-     * @return the nombre
+     * @return Devuelve el valor del atributo nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param nombre Cambia el valor de este atributo
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     *  @return Devuelve el valor del atributo cuenta
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * @param cuenta Cambia el valor de este atributo
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     *  @return Devuelve el valor del atributo saldo
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * @param saldo Cambia el valor de este atributo
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     *  @return Devuelve el valor del atributo tipoInteres
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * @param tipoInterés Cambia el valor de este atributo
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
 
-
+    /**
+     * DECLARACIÓN DE ATRIBUTOS
+     */
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * CONSTRUCTOR
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * CONSTRUCTOR CON PARÁMETROS
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -76,11 +89,19 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * MÉTODO QUE DEVUELVE EL VALOR CONTENIDO EN getsaldo
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     * Método que genera una excepción para valores negativos de la variable cantidad
+     * @param cantidad
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -88,6 +109,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Método que genera excepciones para valores incorrectos de la variable cantidad
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
