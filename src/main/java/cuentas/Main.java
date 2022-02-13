@@ -1,5 +1,11 @@
 package cuentas;
 
+/**
+ * 
+ * @author Juan Manuel Ruiz Bolívar
+ * @version 1.0
+ */
+
 public class Main {
 
     public static void main(String[] args) {
